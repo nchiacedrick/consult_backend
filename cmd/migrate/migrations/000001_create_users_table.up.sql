@@ -1,0 +1,15 @@
+CREATE EXTENSION IF NOT EXISTS citext;
+
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY UNIQUE NOT NULL, 
+    username VARCHAR(255) UNIQUE NOT NULL,
+    email citext UNIQUE NOT NULL,
+    password_hash BYTEA,
+    phone VARCHAR(20) UNIQUE,
+    google_id VARCHAR(255),
+    version INT NOT NULL DEFAULT 0,
+    auth_provider VARCHAR(75),
+    is_activated BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

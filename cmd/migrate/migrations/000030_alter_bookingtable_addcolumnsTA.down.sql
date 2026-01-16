@@ -1,0 +1,3 @@
+ALTER TABLE IF EXISTS bookings
+DROP COLUMN IF EXISTS topic,
+DROP COLUMN IF EXISTS additional_notes; 

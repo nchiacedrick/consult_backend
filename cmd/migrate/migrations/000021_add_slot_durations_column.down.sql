@@ -1,0 +1,2 @@
+ALTER TABLE timeslots
+DROP COLUMN IF EXISTS duration;

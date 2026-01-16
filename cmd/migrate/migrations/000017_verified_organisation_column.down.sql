@@ -1,0 +1,2 @@
+ALTER TABLE IF EXISTS organisations
+DROP COLUMN IF NOT EXISTS verified; 

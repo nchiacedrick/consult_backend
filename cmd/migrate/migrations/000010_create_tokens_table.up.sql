@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS tokens(
+    hash BYTEA PRIMARY KEY NOT NULL, 
+    user_id INT NOT NULL,
+    expiry TIMESTAMP WITH TIME ZONE NOT NULL,
+    scope VARCHAR(255) NOT NULL, 
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);

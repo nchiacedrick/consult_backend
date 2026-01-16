@@ -1,0 +1,7 @@
+ALTER TABLE IF EXISTS bookings
+DROP CONSTRAINT IF EXISTS valid_booking_time,
+DROP CONSTRAINT IF EXISTS minimum_duration,
+DROP COLUMN IF EXISTS bk_status,
+DROP COLUMN IF EXISTS start_time,
+DROP COLUMN IF EXISTS end_time,
+DROP COLUMN IF EXISTS expert_id; 

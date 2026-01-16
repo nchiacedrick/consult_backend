@@ -1,0 +1,2 @@
+ALTER TABLE zoom_meetings
+ADD COLUMN IF NOT EXISTS start_url TEXT;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #007bff; color: white; padding: 20px; border-radius: 5px; }
+        .content { padding: 20px; border: 1px solid #ddd; }
+        .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+        .button { display: inline-block; background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>New Booking Request</h2>
+        </div>
+        <div class="content">
+            <p>Hi {{.ExpertName}},</p>
+            <p>You have received a new booking request!</p>
+            <p><strong>Client Details:</strong></p>
+            <ul>
+                <li><strong>Name:</strong> {{.ClientName}}</li>
+                <li><strong>Email:</strong> {{.ClientEmail}}</li>
+                <li><strong>Phone:</strong> {{.ClientPhone}}</li>
+            </ul>
+            <p><strong>Booking Information:</strong></p>
+            <ul>
+                <li><strong>Date:</strong> {{.BookingDate}}</li>
+                <li><strong>Time:</strong> {{.BookingTime}}</li>
+                <li><strong>Service:</strong> {{.ServiceType}}</li>
+            </ul>
+            <p><strong>Message:</strong></p>
+            <p>{{.ClientMessage}}</p>
+            <p>
+                <a href="{{.BookingLink}}" class="button">Review Booking</a>
+            </p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 ConsultApp. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

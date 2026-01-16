@@ -1,0 +1,45 @@
+{{define "meeting_accepted"}}
+<!-- Subject: Your meeting with {{.ExpertName}} has been approved -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body { font-family: Arial, sans-serif; color: #111; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .button { display: inline-block; padding: 10px 16px; background:#0366d6; color:#fff; text-decoration:none; border-radius:4px; }
+        .muted { color: #6b7280; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hello {{.UserName}},</p>
+
+        <p>Your meeting request has been approved by <strong>{{.ExpertName}}</strong>.</p>
+
+        <p>
+            <strong>When:</strong> {{.MeetingDate}} {{.MeetingTime}}<br/>
+            {{if .MeetingLocation}}
+                <strong>Where:</strong> {{.MeetingLocation}}<br/>
+            {{else if .MeetingLink}}
+                <strong>Link:</strong> <a href="{{.MeetingLink}}">{{.MeetingLink}}</a><br/>
+            {{end}}
+        </p>
+
+        {{if .Notes}}
+            <p><strong>Message from {{.ExpertName}}:</strong><br/>{{.Notes}}</p>
+        {{end}}
+
+        {{if .DetailsURL}}
+            <p><a class="button" href="{{.DetailsURL}}">View meeting details</a></p>
+        {{end}}
+
+        <p class="muted">If you need to reschedule or have questions, contact <a href="mailto:{{.SupportEmail}}">{{.SupportEmail}}</a>.</p>
+
+        <p>Regards,<br/>ConsultApp Team</p>
+    </div>
+</body>
+</html>
+{{end}}

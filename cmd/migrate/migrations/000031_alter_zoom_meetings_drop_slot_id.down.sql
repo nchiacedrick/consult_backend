@@ -1,0 +1,2 @@
+ALTER TABLE IF EXISTS zoom_meetings
+DROP COLUMN IF EXISTS slot_id;
