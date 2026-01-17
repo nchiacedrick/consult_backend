@@ -1,0 +1,17 @@
+name: GitOps Pipeline with ArgoCD
+
+on: 
+    push:
+        branches:
+            - main
+env: 
+    PERSONNAL_ACCESS_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                token: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
+                fetch-depth: 0
