@@ -1,3 +1,4 @@
+
 name: GitOps Pipeline with ArgoCD
 
 on: 
@@ -29,6 +30,9 @@ jobs:
 
             - name: Build Docker image
               run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }}  .
+
+            - name: Scan Docker Image With Trivy
+              run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }}   
 
         
             # - name: Build API binary
