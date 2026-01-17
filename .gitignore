@@ -33,6 +33,10 @@ go.sum
 /manifest/configmap.yaml
 ./manifest/secrets.yaml
 /manifest/secrets.yaml
+./manifest/secret.yaml
+/manifest/secret.yaml
+./manifest/db-secret.yaml
+/manifest/db-secret.yaml
 
 # Build output
 bin/
