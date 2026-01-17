@@ -1,0 +1,39 @@
+
+# Postgres Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: consultout-db
+spec:
+  clusterIP: None
+  selector:
+    app: consultout-db
+  ports:
+  - port: 5432
+    targetPort: 5432
+
+--- 
+# Redis Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: consultout-redis
+spec:
+  selector:
+    app: consultout-redis
+  ports:
+  - port: 6379
+    targetPort: 6379  
+
+---
+# Backend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: consultout-backend
+spec:
+  selector:
+    app: consultout-backend
+  ports:
+  - port: 80
+    targetPort: 8080

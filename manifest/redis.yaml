@@ -1,0 +1,22 @@
+---
+# Redis Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consultout-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consultout-redis
+  template:
+    metadata:
+      labels:
+        app: consultout-redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:7
+        ports:
+        - containerPort: 6379
+

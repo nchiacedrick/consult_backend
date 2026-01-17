@@ -1,0 +1,32 @@
+# main backend deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consultout-backend
+  labels:
+    app: consultout-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consultout-backend
+  template:
+    metadata:
+      labels:
+        app: consultout-backend
+    spec:
+      containers:
+      - name: consultout-backend
+        image: nchiacedrick/my-app:e13976ecc0cb33e96587c785a6f27fd72a20048c
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: consultout-backend-config
+        - secretRef:
+            name: consultout-backend-secret
+
+
+
+
+
