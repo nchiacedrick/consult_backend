@@ -19,9 +19,6 @@ spec:
         image: redis:7
         ports:
         - containerPort: 6379
-        envFrom:
-        - secretRef:
-            name: consultout-backend-secret
 
 --- 
 # PostgreSQL Deployment
