@@ -29,9 +29,7 @@ go.sum
 *~
 .DS_Store
 
-./manifest/secret.yaml 
 ./manifest/configmap.yaml
-/manifest/secret.yaml
 /manifest/configmap.yaml
 
 # Build output
