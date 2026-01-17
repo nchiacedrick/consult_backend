@@ -11,7 +11,6 @@ import (
 	"syscall"
 	"time"
 
-	"consult_app.cedrickewi/docs"
 	"consult_app.cedrickewi/internal/mailer"
 	"consult_app.cedrickewi/internal/mtgschelduler"
 	"consult_app.cedrickewi/internal/payunit"
@@ -59,10 +58,6 @@ type smtp struct {
 
 // setup server configuration and run server
 func (app *application) run(mux http.Handler, port int) error {
-	// Docs
-	docs.SwaggerInfo.Version = version
-	docs.SwaggerInfo.Host = app.config.apiURL
-	docs.SwaggerInfo.BasePath = "/v1"
 
 	srv := &http.Server{
 		Addr:         fmt.Sprintf(":%d", port),

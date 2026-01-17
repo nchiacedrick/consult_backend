@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	_ "consult_app.cedrickewi/docs" // Import the generated docs
 
 	"consult_app.cedrickewi/internal/db"
 	"consult_app.cedrickewi/internal/env"
