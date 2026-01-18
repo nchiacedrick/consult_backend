@@ -5,6 +5,7 @@ kind: Deployment
 metadata:
   name: consultout-redis
   namespace: argocd
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -19,6 +20,9 @@ metadata:
         image: redis:7
         ports:
         - containerPort: 6379
+        envFrom:
+        - secretRef:
+            name: consultout-backend-secret
 
 --- 
 # PostgreSQL Deployment
