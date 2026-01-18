@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: consultout-backend
-        image: nchiacedrick/my-app:172c3c29da2735df2097e96ff703f757b5098554
+        image: nchiacedrick/my-app:5f48190b7ea872191ebf2f3bd6492d83ca18a4d1
         ports:
         - containerPort: 8080
         envFrom:
