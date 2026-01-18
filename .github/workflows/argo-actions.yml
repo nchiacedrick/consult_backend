@@ -2,9 +2,11 @@
 name: GitOps Pipeline with ArgoCD
 
 on: 
-    push:
-        branches:
+    push:   
+       branches: 
             - main
+       paths-ignore:
+            - 'manifest/**' # ignore changes to manifest files to prevent loop
 env: 
     PERSONNAL_ACCESS_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
     DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
