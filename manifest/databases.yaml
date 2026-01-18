@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: consultout-redis
-spec:
+  namespace: argocd
   replicas: 1
   selector:
     matchLabels:
@@ -26,6 +26,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: consultout-db
+  namespace: argocd
 spec:
   serviceName: "consultout-db"
   replicas: 1
